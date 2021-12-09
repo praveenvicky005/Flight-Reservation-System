@@ -3,7 +3,7 @@ package com.company;
 public class RegularTicket extends Ticket {
     private boolean isFoodAvaild;
    private boolean isWaterAvaild;
-    private boolean isSnacksAvaild;
+    private  boolean isSnacksAvaild;
 
     public boolean isFoodAvaild() {
         return isFoodAvaild;

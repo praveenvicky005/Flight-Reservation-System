@@ -4,10 +4,10 @@ package com.company;
    private String flightNumber;
     private String airLineName;
    private int totalSeat;
-    private   int bookedSeat;
+    private   int bookedSeat = 0;
 
-    String getFlightDetails(){
-      return "flightnumber: "+flightNumber+", airLineName: "+airLineName+", totalseat: "+totalSeat;
+    String getFlightDetails() {
+        return "FlightNumber: " + flightNumber + ", AirlineName: " + airLineName + ", TotalSeat: " + totalSeat + "BookedSeat: " + bookedSeat;
     }
     String availableSeat(){
         return "available seat: "+ (totalSeat-bookedSeat);
@@ -49,6 +49,6 @@ package com.company;
          this.flightNumber = flightNumber;
          this.airLineName = airLineName;
          this.totalSeat = totalSeat;
-         this.bookedSeat = bookedSeat;
+         this.bookedSeat = bookedSeat++;
      }
  }

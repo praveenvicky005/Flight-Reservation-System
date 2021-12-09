@@ -8,9 +8,8 @@ public class Ticket {
     private String bookedFLight;
     private String dateAndTimeOFArrival;
     private String dateAndTimeOfDeparture;
-     Passenger passenger;
-    int seatNumber;
-    int priceOfTIcket;
+    private int seatNumber;
+    private int priceOfTicket;
     Flight flight;
 
     public Ticket() {
@@ -73,12 +72,12 @@ public class Ticket {
         this.seatNumber = seatNumber;
     }
 
-    public int getPriceOfTIcket() {
-        return priceOfTIcket;
+    public int getPriceOfTicket() {
+        return priceOfTicket;
     }
 
-    public void setPriceOfTIcket(int priceOfTIcket) {
-        this.priceOfTIcket = priceOfTIcket;
+    public void setPriceOfTicket(int priceOfTIcket) {
+        this.priceOfTicket = priceOfTicket;
     }
 
     public Ticket(String pnrNumber, String departureLocation, String destinationLocation, String bookedFLight, String dateAndTimeOFArrival, String dateAndTimeOfDeparture,  int seatNumber, int priceOfTicket) {
@@ -89,7 +88,7 @@ public class Ticket {
         this.dateAndTimeOFArrival = dateAndTimeOFArrival;
         this.dateAndTimeOfDeparture = dateAndTimeOfDeparture;
         this.seatNumber = seatNumber;
-        this.priceOfTIcket = priceOfTicket;
+        this.priceOfTicket = priceOfTicket;
 
 
     }
@@ -98,6 +97,6 @@ public class Ticket {
         this.flight = flight;
     }
     String getTicketPrint(){
-        return "pnr Number: "+pnrNumber+", departure: "+departureLocation+", arrival: "+destinationLocation+", booked FLight: "+bookedFLight+", depart Time: "+dateAndTimeOfDeparture+", arrivalDate: "+dateAndTimeOFArrival+", seatNumber: "+seatNumber+", amount Paid: "+priceOfTIcket;
+        return "pnr Number: "+pnrNumber+", departure: "+departureLocation+", arrival: "+destinationLocation+", booked FLight: "+bookedFLight+", depart Time: "+dateAndTimeOfDeparture+", arrivalDate: "+dateAndTimeOFArrival+", seatNumber: "+seatNumber+", amount Paid: "+priceOfTicket;
     }
 }

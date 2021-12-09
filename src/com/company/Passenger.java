@@ -1,63 +1,19 @@
 package com.company;
 
-
-
 public class Passenger {
-
-    private String name;
-    private String phoneNumber;
-    private String email;
     private static int idCounter = 0;
     Contact contact;
     Address address;
 
-    public Passenger() {
-        this.name = name;
-        this.phoneNumber = phoneNumber;
-        this.email = email;
-        this.contact = contact;
-        this.address = address;
-        this.idCounter = idCounter+1;
-    }
-
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getPhoneNumber() {
-        return phoneNumber;
-    }
-
-    public void setPhoneNumber(String phoneNumber) {
-        this.phoneNumber = phoneNumber;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
+    public Passenger(String name,String street,String city,String state,String pinCode,String phoneNumber,String email){
+        this.address = new Address(name,street,city,pinCode);
+        this.contact = new Contact(name,phoneNumber,email);
+        this.idCounter = idCounter++;
     }
 
     public static int getPassengerCount() {
         return idCounter;
     }
-
-   //
-    //    public boolean isOldCustomer() {
-    //        return isOldCustomer;
-    //    }
-    //
-    //    public void setOldCustomer(boolean oldCustomer) {
-    //        isOldCustomer = oldCustomer;
-    //    }
-
 
     private static class Contact {
         private String name;
@@ -98,24 +54,45 @@ public class Passenger {
         public void setEmail(String email) {
             this.email = email;
         }
+
+        @Override
+        public String toString() {
+            return "Contact{" +
+                    "name='" + name + '\'' +
+                    ", phoneNumber='" + phoneNumber + '\'' +
+                    ", email='" + email + '\'' +
+                    '}';
+        }
     }
 
    private   static class Address {
         private String street;
         private String city;
         private String state;
+        private String  pinCode;
 
 
-        Address() {
+        Address(String street,String city,String state,String pinCode) {
             this.street = street;
             this.city = city;
             this.state = state;
+            this.pinCode = pinCode;
         }
 
         String getAddress() {
             return street + "," + city + "," + state;
         }
-    }
+
+       @Override
+       public String toString() {
+           return "Address{" +
+                   "street='" + street + '\'' +
+                   ", city='" + city + '\'' +
+                   ", state='" + state + '\'' +
+                   ", pinCode='" + pinCode + '\'' +
+                   '}';
+       }
+   }
 }
 
 
