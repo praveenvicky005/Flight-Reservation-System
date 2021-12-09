@@ -1,10 +1,10 @@
 package com.company;
 
  public class Flight {
-    String flightNumber;
-    String airLineName;
-    int totalSeat;
-    int bookedSeat;
+   private String flightNumber;
+    private String airLineName;
+   private int totalSeat;
+    private   int bookedSeat;
 
     String getFlightDetails(){
       return "flightnumber: "+flightNumber+", airLineName: "+airLineName+", totalseat: "+totalSeat;
@@ -42,6 +42,13 @@ package com.company;
      }
 
      public void setBookedSeat(int bookedSeat) {
+         this.bookedSeat = bookedSeat;
+     }
+
+     public Flight() {
+         this.flightNumber = flightNumber;
+         this.airLineName = airLineName;
+         this.totalSeat = totalSeat;
          this.bookedSeat = bookedSeat;
      }
  }

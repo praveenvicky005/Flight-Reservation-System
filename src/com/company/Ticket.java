@@ -1,15 +1,17 @@
 package com.company;
 
 public class Ticket {
-    String pnrNumber ;
-    String departureLocation;
-    String destinationLocation;
-    String bookedFLight;
-    String dateAndTimeOFArrival;
-    String dateAndTimeOfDeparture;
-    Contact contact;
+
+    private String pnrNumber ;
+    private String departureLocation;
+    private String destinationLocation;
+    private String bookedFLight;
+    private String dateAndTimeOFArrival;
+    private String dateAndTimeOfDeparture;
+     Passenger passenger;
     int seatNumber;
     int priceOfTIcket;
+    Flight flight;
 
     public Ticket() {
     }
@@ -62,13 +64,6 @@ public class Ticket {
         this.dateAndTimeOfDeparture = dateAndTimeOfDeparture;
     }
 
-    public Contact getContact() {
-        return contact;
-    }
-
-    public void setContact(Contact contact) {
-        this.contact = contact;
-    }
 
     public int getSeatNumber() {
         return seatNumber;
@@ -86,7 +81,7 @@ public class Ticket {
         this.priceOfTIcket = priceOfTIcket;
     }
 
-    public Ticket(String pnrNumber, String departureLocation, String destinationLocation, String bookedFLight, String dateAndTimeOFArrival, String dateAndTimeOfDeparture,  int seatNumber, int priceOfTIcket) {
+    public Ticket(String pnrNumber, String departureLocation, String destinationLocation, String bookedFLight, String dateAndTimeOFArrival, String dateAndTimeOfDeparture,  int seatNumber, int priceOfTicket) {
         this.pnrNumber = pnrNumber;
         this.departureLocation = departureLocation;
         this.destinationLocation = destinationLocation;
@@ -94,7 +89,15 @@ public class Ticket {
         this.dateAndTimeOFArrival = dateAndTimeOFArrival;
         this.dateAndTimeOfDeparture = dateAndTimeOfDeparture;
         this.seatNumber = seatNumber;
-        this.priceOfTIcket = priceOfTIcket;
+        this.priceOfTIcket = priceOfTicket;
+
+
     }
 
+    public Ticket(Flight flight) {
+        this.flight = flight;
+    }
+    String getTicketPrint(){
+        return "pnr Number: "+pnrNumber+", departure: "+departureLocation+", arrival: "+destinationLocation+", booked FLight: "+bookedFLight+", depart Time: "+dateAndTimeOfDeparture+", arrivalDate: "+dateAndTimeOFArrival+", seatNumber: "+seatNumber+", amount Paid: "+priceOfTIcket;
+    }
 }

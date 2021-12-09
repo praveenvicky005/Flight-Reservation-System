@@ -1,9 +1,9 @@
 package com.company;
 
 public class RegularTicket extends Ticket {
-    boolean isFoodAvaild;
-    boolean isWaterAvaild;
-    boolean isSnacksAvaild;
+    private boolean isFoodAvaild;
+   private boolean isWaterAvaild;
+    private boolean isSnacksAvaild;
 
     public boolean isFoodAvaild() {
         return isFoodAvaild;
